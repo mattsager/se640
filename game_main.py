@@ -4,16 +4,18 @@ from character import Character, BugsBunny, TazDevil, Tweety, MarvinMartian
 class Main():
     def __init__(self) -> None:
         pygame.init()
-        window = pygame.display.set_mode((1280, 720))
-        
-        bugs = Character(BugsBunny)
-        taz = Character(TazDevil)
-        tweety = Character(Tweety)
-        marvin = Character(MarvinMartian)
+        self.window = pygame.display.set_mode((1280, 720))
+        self.clock = pygame.time.Clock()
+
+        self.bugs = Character(BugsBunny)
+        self.taz = Character(TazDevil)
+        self.tweety = Character(Tweety)
+        self.marvin = Character(MarvinMartian)
         self.running = True
 
-    def start_game(grid):
-        while grid.running:
+    def start_game(self):
+        while self.running:
+            self.clock.tick(60)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    grid.running = False
+                    self.running = False
