@@ -67,5 +67,25 @@ class GameGrid:
         #return {'x':random.randint(1, 5), 'y':random.randint(1, 5)}
         return {'x':random.choice(available_locs['col']), 'y':random.choice(available_locs['row'])}
 
+
+    def set_carrot1_loc(self, loc):
+        self.golden_carrot1.update(loc)
+
+    def get_carrot1_loc(self):
+        return (self.golden_carrot1['x'], self.golden_carrot1['y'])
+
+    def set_carrot2_loc(self, loc):
+        self.golden_carrot2.update(loc)
+
+    def get_carrot2_loc(self):
+       return (self.golden_carrot2['x'], self.golden_carrot2['y'])
+
+    #all mountain movements are random
+    def set_mountain_loc(self):
+        self.mountain.update(self.get_random_loc())
+
+    def get_mountain_loc(self):
+        return (self.mountain['x'], self.mountain['y'])
+
     def print_game_board(self):
         pass
